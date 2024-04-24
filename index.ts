@@ -18,6 +18,11 @@ function main() {
     const rule = Math.floor(Math.random() * 255);
     title.textContent += " (Rule: " + rule.toString() + ")";
 
+    const reduction = 3;
+
+    canvas.width = canvas.clientWidth / reduction;
+    canvas.height = canvas.clientHeight / reduction;
+
     const worldManager = new wasm.WorldManager(canvas.width, canvas.height, rule);
     const world = worldManager.make();
     for (let y = 0; y < worldManager.height; y++) {
