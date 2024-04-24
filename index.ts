@@ -2,6 +2,7 @@ import init, * as wasm from "./pkg/one_dim_ca_random_web.js";
 
 const canvas = document.getElementById("canvas") as HTMLCanvasElement;
 const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
+const title = document.getElementById("title") as HTMLHeadingElement;
 
 init()
 .then(() => {
@@ -15,6 +16,8 @@ function main() {
     ctx.fillStyle = "#000";
     
     const rule = Math.floor(Math.random() * 255);
+    title.textContent += " (Rule: " + rule.toString() + ")";
+
     const worldManager = new wasm.WorldManager(canvas.width, canvas.height, rule);
     const world = worldManager.make();
     for (let y = 0; y < worldManager.height; y++) {
