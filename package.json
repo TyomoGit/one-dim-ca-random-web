@@ -1,0 +1,19 @@
+{
+  "name": "one-dim-ca-random-web",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "wasm-pack test --firefox --chrome --safari --headless",
+    "build": "wasm-pack build --target web --release; tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
